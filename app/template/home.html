@@ -1,0 +1,49 @@
+<div class="container" >
+
+    <div class="masthead">
+      <h3 class="text-muted">QR Deposito Luminaria</h3>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: dimgrey">
+            <div  id = "reader"  style = "width: 300px; height: 230px" > </div>
+      <p><a class="btn  btn-success" ng-if="viewButton == true"  ng-click="newQR()" href="#" role="button">Escanear Nuevo QR</a></p>
+    </div>
+
+    <div>
+            <h3>QR por dar de alta: </h3> {{nameqr}}
+        </div>
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-lg-4">
+            <form name="createLuminaria" class="form-claim">
+
+                    <h2>Datos de Luminaria</h2>
+                    <h4>Marca:</h4>
+                    <select class="form-control" id="brand" ng-model="controladorApp.data.brand">
+                            <option ng-repeat="brand in listBrand" value="{{brand.id}}" >{{brand.name}}</option>
+                    </select>
+                    <h4>Modelo: </h4>
+                    <select class="form-control" id="model" ng-model="controladorApp.data.model">
+                            <option ng-repeat="model in listModel" value="{{model.id}}" >{{model.name}}</option>
+                    </select>
+                    <h4>Fecha Alta: </h4>
+                    <input type="date" class="form-control" id="fechaActual"  value="" disabled >
+
+                    <button type="submit" class="btn btn-primary" ng-click="controladorApp.form()">Entrar</button>
+
+
+                </form>
+                
+      </div>
+    
+    </div>
+
+    <!-- Site footer -->
+    <footer class="footer">
+      <p>© 2019 Simpletask</p>
+    </footer>
+
+  </div>
+
+
